@@ -7,13 +7,12 @@ class ProductsController < ApplicationController
     @products = Product.all
     end
 
-    respond_to do |format|
-      format.html
-      format.js
+    if request.xhr?
+      render @products
+    # respond_to do |format|
+    #   format.html
+    #   format.js
     end
-    # if request.xhr?
-    #   render @products
-    # end
   end
 
 
@@ -63,4 +62,5 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:name, :description, :price_in_cents)
   end
+
 end
