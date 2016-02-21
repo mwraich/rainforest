@@ -14,6 +14,16 @@ class ReviewsController < ApplicationController
     else
       render 'products/show'
     end
+
+    respond_to do |format|
+      if @review.save
+        format.html { redirect_to product_path(@product.id), notice: 'Review added.'}
+        format.js {}
+      else
+        format.html { render 'products/show', alert: 'There was an error.'}
+        format.js{}
+      end
+    end
   end
 
   def destroy
