@@ -1,6 +1,6 @@
 <p> Reviews for <%= @product.name %> </p>
 <% @product.reviews.each do |review| %>
-<p>
+<p class ="comment">
   <%= review.comment %>
   <br/>
   <% if review.user != nil %>

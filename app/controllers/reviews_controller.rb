@@ -1,7 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :load_product
   before_action :ensure_logged_in, only: [:create, :destroy]
-  validates :comment, :prescence => true
 
   def show
     @review = Review.find(params[:id])
@@ -18,7 +17,6 @@ class ReviewsController < ApplicationController
       else
         format.html { render 'products/show', alert: 'There was an error.'}
         format.js{}
-}
       end
     end
   end
