@@ -44,6 +44,11 @@
           .val('saving...')
           .attr('disabled', 'disabled');
       })
+      .on('ajax:complete', function() {
+        $("input[type='submit']")
+          .val('create Review')
+          .removeAttr('disabled')
+      });
   });
 </script>
   <!-- <script type="text/javascript">
