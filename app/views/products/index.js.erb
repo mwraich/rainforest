@@ -5,4 +5,4 @@
   $('#products').append('<%= j render(@products) %>');
 <% end %>
 
-$('.pagination').replaceWith(' <%= j paginate(@products) %>');
+$('.pagination').replaceWith('<%= j paginate(@products) %>');

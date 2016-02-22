@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
     end
 
     @products = @products.order('products.created_at DESC').page(params[:page])
-
+    @products_all = Product.all
     # if request.xhr?
     #   render @products
 
