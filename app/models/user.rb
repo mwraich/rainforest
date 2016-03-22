@@ -1,7 +1,3 @@
 class User < ActiveRecord::Base
-  has_many :reviews
-  has_many :products, through: :reviews
-  has_secure_password
-
-  validates :name, presence: true
+  authenticates_with_sorcery!
 end
